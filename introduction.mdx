@@ -1,0 +1,94 @@
+---
+title: Introduction to Sai Gautham Kishtapuram Documentation
+description: Get an overview of the Sai Gautham Kishtapuram Documentation platform, a default space for organizing and managing project documentation with brand color #3B82F6.
+---
+
+## Overview
+
+Welcome to the Sai Gautham Kishtapuram Documentation platform. You use this default space to organize and manage all your project documentation efficiently. The platform features a clean interface with the brand color `#3B82F6`, making it easy to create, edit, and publish docs for your projects.
+
+<Callout kind="info">
+This documentation space serves as your central hub. Customize it to fit your team's needs, from API references to user guides.
+</Callout>
+
+The platform supports MDX for rich content, including interactive components like tabs and steps. You collaborate in real-time, version your docs, and embed them anywhere.
+
+## Key Benefits
+
+You gain several advantages by using this platform for project documentation:
+
+<Columns cols={3}>
+  <Card title="Centralized Management" icon="database" href="#">
+    Store all docs in one place. Organize with folders and tags for quick access.
+  </Card>
+  <Card title="Rich Formatting" icon="edit-3" href="#">
+    Use MDX components for interactive guides. Embed code, diagrams, and media seamlessly.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#">
+    Invite team members. Edit together with version history and comments.
+  </Card>
+</Columns>
+
+These features streamline your workflow. The brand color `#3B82F6` ensures consistent branding across all pages.
+
+## Getting Familiar with the Interface
+
+Follow these steps to navigate the interface quickly:
+
+<Steps>
+  <Step title="Access Dashboard" icon="home">
+    Log in to view your documentation spaces. Select the Sai Gautham Kishtapuram space.
+  </Step>
+  <Step title="Create Content" icon="plus">
+    Click "New Page" to start writing. Choose MDX for advanced formatting.
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Preview changes live. Publish when ready to share with your team.
+  </Step>
+</Steps>
+
+Explore sections like sidebar navigation and search. Use the editor's preview mode to test components.
+
+<Tabs>
+  <Tab title="Web Editor" icon="globe">
+    Edit docs directly in your browser. Supports real-time collaboration.
+  </Tab>
+  <Tab title="Markdown Import" icon="upload">
+    Import existing `.mdx` files. Maintains formatting and components.
+  </Tab>
+  <Tab title="Embed Docs" icon="code">
+    Generate embed codes for your apps.
+
+    <CodeGroup tabs="HTML,React">
+```html
+<iframe src="https://docs.yourdomain.com/embed/page" style="border:1px solid #3B82F6;"></iframe>
+```
+```jsx
+import { Embed } from './components';
+
+<Embed src="https://docs.yourdomain.com/embed/page" brandColor="#3B82F6" />
+```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Advanced Features
+
+<ExpandableGroup>
+  <Expandable title="Custom Components" default-open="false">
+    Extend with custom JSX. Add branded elements using `#3B82F6` for consistency.
+
+    ```javascript
+    const BrandCard = ({ children }) => (
+      <div style={{ borderColor: '#3B82F6' }}>
+        {children}
+      </div>
+    );
+    ```
+  </Expandable>
+  <Expandable title="Version Control">
+    Track changes with Git integration. Roll back to previous versions easily.
+  </Expandable>
+</ExpandableGroup>
+
+Start building your docs today. This platform empowers you to create professional documentation tailored to your projects.

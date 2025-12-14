@@ -1,0 +1,151 @@
+---
+title: Configuration Options
+description: Customize your documentation space to fit your project's needs and workflows.
+---
+
+## Overview
+
+Tailor your documentation space with flexible configuration options. You control themes, branding, user permissions, and custom styles to match your project's identity and team structure. Start with basic setup and scale to advanced customizations.
+
+<Callout kind="tip">
+  Back up your current configuration before making changes to avoid disrupting your live site.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Themes" icon="palette" href="#themes">
+    Apply light, dark, or custom themes.
+  </Card>
+  <Card title="Permissions" icon="shield" href="#permissions">
+    Control who edits and views content.
+  </Card>
+  <Card title="Custom Styles" icon="brush" href="#styles">
+    Add CSS and fonts for unique branding.
+  </Card>
+</Columns>
+
+## Themes and Branding
+
+Set your brand color and theme mode to reflect your project's visual identity. Use the configuration file to define primary colors and toggle between light and dark modes.
+
+<Steps>
+  <Step title="Edit Config File" icon="edit-3">
+    Open your `config.yaml` or `saiga-config.json` file.
+  </Step>
+  <Step title="Set Brand Color" icon="droplet">
+    Update the `brandColor` field with your hex value, such as `#3B82F6`.
+  </Step>
+  <Step title="Choose Theme Mode" icon="sun">
+    Set `themeMode` to `light`, `dark`, or `system`.
+  </Step>
+  <Step title="Restart Server" icon="refresh-cw">
+    Run `npm run dev` to apply changes.
+  </Step>
+</Steps>
+
+Here is a sample configuration:
+
+<CodeGroup tabs="YAML,JSON">
+```yaml
+brandColor: "#3B82F6"
+themeMode: "system"
+logoUrl: "https://your-domain.com/logo.svg"
+```
+
+```json
+{
+  "brandColor": "#3B82F6",
+  "themeMode": "system",
+  "logoUrl": "https://your-domain.com/logo.svg"
+}
+```
+</CodeGroup>
+
+## Managing User Permissions
+
+Define roles and access levels for your team. Assign `admin`, `editor`, or `viewer` permissions to control content management.
+
+<Tabs>
+  <Tab title="YAML Config" icon="file-text">
+    ```yaml
+    permissions:
+      admins:
+        - user@example.com
+      editors:
+        - editor1@team.com
+        - editor2@team.com
+      viewers:
+        - viewer@external.com
+    ```
+  </Tab>
+  <Tab title="JSON Config" icon="code">
+    ```json
+    {
+      "permissions": {
+        "admins": ["user@example.com"],
+        "editors": ["editor1@team.com", "editor2@team.com"],
+        "viewers": ["viewer@external.com"]
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Always use secure email lists and avoid sharing config files publicly.
+</Callout>
+
+## Integrating Custom Styles
+
+Inject custom CSS, fonts, and JavaScript to enhance your documentation's appearance and functionality.
+
+### Basic CSS Injection
+
+Add styles via the config file:
+
+```css
+/* In your custom-styles.css */
+:root {
+  --primary-color: #3B82F6;
+}
+
+.header {
+  background: var(--primary-color);
+}
+```
+
+<Expandable title="Advanced JavaScript Integration" default-open="false">
+  Load custom scripts for interactive features.
+
+  ```html
+  <!-- Add to config.headScripts -->
+  <script src="https://your-domain.com/analytics.js"></script>
+  ```
+
+  ```javascript
+  // custom-script.js
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Custom script loaded');
+    // Add your analytics or tracking code here
+  });
+  ```
+</Expandable>
+
+### Parameter Reference
+
+Use these fields in your config:
+
+| Field          | Type     | Required | Description                          |
+|----------------|----------|----------|--------------------------------------|
+| `brandColor`   | string   | Yes      | Hex color code like `#3B82F6`        |
+| `themeMode`    | string   | No       | Options: `light`, `dark`, `system`   |
+| `permissions`  | object   | No       | Role-based access lists              |
+
+<ParamField path="brandColor" param-type="string" required="true">
+  Primary brand color in hex format.
+</ParamField>
+
+<ParamField query="themeMode" param-type="string">
+  User theme preference mode.
+</ParamField>
+
+Customize further by combining these options. Your documentation adapts seamlessly to your workflow, ensuring a branded, secure experience for your team. Explore advanced integrations in the expandable sections for deeper personalization.

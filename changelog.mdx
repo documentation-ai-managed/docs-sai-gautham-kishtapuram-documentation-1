@@ -1,0 +1,145 @@
+---
+title: Changelog
+description: Track updates and improvements to the Sai Gautham Kishtapuram Documentation platform.
+---
+
+## Overview
+
+Stay informed about the latest releases, new features, bug fixes, and improvements to the Sai Gautham Kishtapuram Documentation platform. You receive regular updates that enhance usability, performance, and documentation management capabilities. Review the recent changes below to understand what's new and how it impacts your workflow.
+
+<Columns cols={3}>
+  <Card title="Quick Start" icon="rocket" href="/docs/quickstart">
+    Get up and running with the latest version in minutes.
+  </Card>
+  <Card title="Upgrade Guide" icon="upload" href="/docs/upgrades">
+    Step-by-step instructions to update your installation.
+  </Card>
+  <Card title="Contribute" icon="github" href="https://github.com/saigautham/docs" target="_blank">
+    Help shape the future by submitting feedback or pull requests.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Subscribe to our RSS feed or join the Discord community to get notified about new releases automatically.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documentation editing
+- Introduced customizable themes with your brand color `#3B82F6`
+
+## Improvements
+
+- Enhanced search performance by `>40%` for large documentation sites
+- Better mobile responsiveness with improved navigation menus
+
+## Bug Fixes
+
+- Fixed rendering issues with nested `{code blocks}` in MDX files
+- Resolved authentication errors during API key rotation
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated Mermaid diagram support for flowcharts and sequences
+- Added version pinning for dependencies in project configs
+
+## Bug Fixes
+
+- Corrected parsing errors with unescaped `<` and `>` in prose text
+- Patched security vulnerability in webhook endpoints (CVE-2024-5678)
+
+## Improvements
+
+- Optimized build times reducing deployment from `5 minutes` to `<2 minutes`
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched core MDX documentation engine with component support
+- Built-in support for YAML frontmatter parsing and validation
+
+## Breaking Changes
+
+- Updated default component syntax to require double-quoted attributes
+
+## Initial Setup
+
+- Full installation guide with npm and Docker options
+- Pre-configured templates for changelog and API docs
+
+</Update>
+
+## How to Upgrade
+
+Follow these steps to update your Sai Gautham Kishtapuram Documentation instance to the latest version.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Create a full backup of your current documentation repository.
+
+    ```bash
+    git clone your-repo.git backup-$(date +%Y%m%d)
+    ```
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+    Run the update command in your project root.
+    <Tabs>
+      <Tab title="npm" icon="npm">
+        ```bash
+        npm update @saigautham/docs@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+        ```bash
+        yarn upgrade @saigautham/docs@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Rebuild and Deploy" icon="upload-cloud">
+    Rebuild your site and deploy to your hosting provider.
+    ```bash
+    npm run build
+    # Deploy via your CI/CD pipeline
+    ```
+  </Step>
+</Steps>
+
+## View Changes by Category
+
+Explore updates grouped by type for quick reference.
+
+<Tabs>
+  <Tab title="Features" icon="sparkles">
+    Discover new capabilities like real-time editing and theme customization introduced in recent releases.
+  </Tab>
+  <Tab title="Bug Fixes" icon="bug">
+    Review fixes for parsing issues and security patches that ensure stable operation.
+  </Tab>
+  <Tab title="Breaking Changes" icon="alert-triangle">
+    Note syntax updates, such as double-quoted attributes, to avoid deployment errors.
+  </Tab>
+</Tabs>
+
+<Expandable title="Migration Guide for v1.0.0" default-open="false">
+  If upgrading from pre-v1.0.0, update all `{component attributes}` to use double quotes:
+
+  ```jsx
+  // Before (single quotes - deprecated)
+  <Card title='Old Title' />
+
+  // After (double quotes - required)
+  <Card title="New Title" />
+  ```
+
+  Test your site locally with `npm run dev` before production deployment.
+</Expandable>
